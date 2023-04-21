@@ -1,0 +1,477 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Schibsted Grotesk', sans-serif;
+}
+/* Para escritorio*/
+body {
+    height: 100vh;
+    background-color: #e2e7f5;
+    transition: .3s ease all;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+h1 {
+    color: #0A3871;
+    margin: auto;
+}
+.logo {
+    margin: 30px 20px;
+}
+
+.switch {
+    height: 20px;
+    width: 44px;
+    margin-right: 100px;
+    background-color: #292d37;
+    border-radius: 50px;
+    border: none;
+    position: relative;
+    right: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+}
+
+.switch::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: #f1f1f1;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 100px;
+    transition: .3s ease all;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+}
+
+.active {
+    background-color: orange;
+    color: #000;
+}
+
+.active::after {
+    right: 0;
+    left: unset;
+}
+
+span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    background: none;
+    color: #fff;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    height: 100%;
+}
+
+.contenedor-encriptador {
+    width: 700px;
+    height: 450px;
+    margin-right: 60px;
+    margin-left: 120px;
+}
+
+textarea {
+    width: 100%;
+    height: 400px;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #e2e7f5;
+    font-size: 22px;
+    color: #0A3871;
+    font-weight: 600;
+    border: none;
+    resize: none;
+    outline: none;
+    transition: .3s ease all;
+}
+
+textarea::placeholder {
+    color: #0A3871;
+    font-weight: 600;
+}
+
+.advertencia {
+    color: #495057;
+    font-size: 12px;
+    margin: 10px 0 10px 10px;
+    transition: .3s ease all;
+}
+
+.advertencia i {
+    margin-right: 8px;
+    color: #495057;
+    transition: .3s ease all;
+}
+
+.botones {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.btn-encriptar {
+    width: 240px;
+    border-radius: 30px;
+    height: 60px;
+    border: none;
+    background-color: #0A3871;
+    color: #e2e7f5;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.btn-encriptar:hover {
+    background-color: #081f37;
+}
+
+.btn-desencriptar {
+    border-radius: 30px;
+    height: 60px;
+    width: 240px;
+    border: 1px #0A3871 solid;
+    background-color: #fff;
+    color: #0A3871;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.btn-desencriptar:hover {
+    background-color: #495057;
+    color: #d7d7d8;
+}
+
+.contenedor-desencriptador {
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 140px;
+    transition: .3s ease all;
+}
+
+#Desencriptador {
+    color: #0A3871;
+    font-size: 22px;
+    font-weight: 600;
+    word-wrap: break-word;
+    width: 350px;
+    height: 420px;
+    overflow-y: scroll;
+    transition: .3s ease all;
+}
+
+/* Esto hace que la barra de scroll no se vea */
+
+#Desencriptador::-webkit-scrollbar {
+    display: none;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texto h4 {
+    margin: 6px;
+    width: 60%;
+    text-align: center;
+    color: #000;
+    opacity: 0.8;
+    font-weight: 700;
+    font-size: 22px;
+    transition: .3s ease all;
+}
+
+.texto h6 {
+    color: #495057;
+    width: 80%;
+    text-align: center;
+    margin: 6px 0 0 0;
+    transition: .3s ease all;
+}
+
+.btn-copiar {
+    margin: 15px 0;
+    border-radius: 30px;
+    height: 70px;
+    width: 300px;
+    border: 1px #0A3871 solid;
+    background-color: #fff;
+    color: #0A3871;
+    cursor: pointer;
+}
+
+.btn-copiar:hover {
+    background-color: #495057;
+    color: #d7d7d8;
+}
+
+/* Para que el boton copiar aparezca cuando se encripte o desencripte un texto, sino permanece oculto */
+
+.desaparecer {
+    display: none;
+}
+
+.aparecer {
+    display: block;
+}
+
+footer {
+    height: 62px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer h5 {
+    font-size: 12px;
+    color: #495057;
+}
+
+.redes img {
+    height: 24px;
+}
+
+/* Para tablet */
+@media(min-width: 481px) and (max-width:1024px){
+    h1 {
+        display: none;
+    }
+    .contenedor {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+
+    .contenedor-encriptador {
+        margin: 0;
+    }
+
+    .contenedor-desencriptador {
+        height: auto;
+        width: 700px;
+        margin: 130px 0 0 0;
+    }
+
+    #Desencriptador {
+        color: #0A3871;
+        font-size: 22px;
+        font-weight: 600;
+        width: 260px;
+        word-wrap: break-word;
+        width: 650px;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+
+    .Pibe {
+        display: none;
+    }
+
+    .texto {
+        width: 500px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .texto h4 {
+        font-size: 24px;
+        text-align: center;
+        opacity: 0.7;
+        color: #000;
+    }
+
+    .texto h6 {
+        color: #495057;
+        font-size: 16px;
+        text-align: center;
+        opacity: 0.6;
+    }
+
+    .botones {
+        justify-content: space-around;
+    }
+
+    .btn-encriptar {
+        width: 300px;
+    }
+
+    .btn-desencriptar {
+        width: 300px;
+    }
+
+    .btn-copiar {
+        width: 600px;
+        font-size: 22px;
+        font-weight: 600px;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        margin-top: 90px;
+        gap: 10px;
+    }
+
+    .redes {
+        margin-bottom: 60px;
+    }
+}
+
+/* Para celular */
+@media(min-width: 320px) and (max-width: 480px){
+    h1 {
+        display: none;
+    }
+    header {
+        height: 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        height: 2.5em;
+        margin: 0;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        margin: 10px 0 0 0;
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    .contenedor-encriptador {
+        width: 100%;
+        height: 600px;
+        margin: 0;
+    }
+
+    .contenedor-encriptador textarea {
+        margin: 0;
+        height: 400px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .advertencia {
+        margin: 10px 20px;
+    }
+
+    .botones {
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .btn-encriptar {
+        width: 346px;
+    }
+
+    .btn-desencriptar {
+        width: 346px;
+    }
+
+    .contenedor-desencriptador {
+        width: 340px;
+        height: auto;
+        margin: 0;
+    }
+
+    #Desencriptador {
+        color: #0A3871;
+        margin: 0;
+        font-size: 22px;
+        font-weight: 600;
+        word-wrap: break-word;
+        width: 280px;
+        height: auto;
+    }
+
+    .Pibe {
+        display: none;
+    }
+
+    .texto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .texto h4 {
+        font-weight: 700;
+        text-align: center;
+        font-size: 24px;
+        width: 100%;
+    }
+
+    .texto h6 {
+        width: 100%;
+        color: #495057;
+        text-align: center;
+        font-size: 14px;
+        margin-top: 8px;
+    }
+
+    .btn-copiar {
+        width: 260px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    footer {
+        height: 100px;
+        gap: 10px;
+    }
+
+    footer h5 {
+        margin-top: 18px;
+        font-weight: 700;
+        font-size: 16px;
+        color: #495057;
+    }
+    
+    .redes a {
+        text-decoration: none;
+    }
+
+    .redes img {
+        height: 32px;
+        margin-bottom: 10px;
+    }
+}
