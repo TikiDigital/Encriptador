@@ -3,7 +3,7 @@ const logo = document.getElementById("Logo")
 const encriptador = document.getElementById("Encriptador")
 const desencriptador = document.querySelector("#Desencriptador")
 
-// Botones
+// Btns
 const btnEncriptar = document.querySelector("#Encriptar")
 const btnDesencriptar = document.getElementById("Desencriptar")
 const btnCopiar = document.getElementById("Copiar")
@@ -61,7 +61,12 @@ const encriptar = (texto) => {
 btnEncriptar.addEventListener("click", (e)=>{
 	e.preventDefault();
 	let texto = document.getElementById("Encriptador").value;
-    desencriptador.innerHTML = encriptar(texto)
+    if (texto.length == 0) {
+        alert("Ingrese un mensaje")
+    } else{
+        desencriptador.innerHTML = encriptar(texto)
+        btnCopiar.style.display = 'block'
+    }
 })
 
 // Desencriptar el texto.
@@ -78,7 +83,12 @@ function desencriptar(texto) {
 btnDesencriptar.addEventListener("click", (e)=>{
 	e.preventDefault();
 	texto = document.getElementById("Encriptador").value;
-    desencriptador.innerHTML = desencriptar(texto);
+    if (texto.length == 0) {
+        alert("Ingrese un mensaje")
+    }else {
+        desencriptador.innerHTML = desencriptar(texto);
+        btnCopiar.style.display = 'block'
+    }
 })
 
 // Copiar.
