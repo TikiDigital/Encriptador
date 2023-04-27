@@ -21,7 +21,7 @@ btnSwitch.addEventListener('click', () => {
     par++
 })
 
-//Corrige los caracteres que no esten en minuscula y lleven tildes
+// Corrige los caracteres que no esten en minuscula y lleven tildes
 function textCorrrect(texto){
 	return  texto.value.toLowerCase().replace(/[áàâã]/g, 'a').replace(/[éèê]/g, 'e').replace(/[íìî]/g, 'i').replace(/[óòôõ]/g, 'o').replace(/[úùû]/g, 'u');
 }
