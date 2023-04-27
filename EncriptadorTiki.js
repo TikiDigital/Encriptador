@@ -6,6 +6,7 @@ const desencriptador = document.querySelector("#Desencriptador")
 // Botones
 const btnEncriptar = document.querySelector("#Encriptar")
 const btnDesencriptar = document.getElementById("Desencriptar")
+const btnCopiar = document.getElementById("Copiar")
 
 // Cambiar entre el tema claro y el oscuro.
 let par = 0
@@ -18,6 +19,14 @@ btnSwitch.addEventListener('click', () => {
         logo.setAttribute("src", "Imagenes/LogoBlanco.svg")
     }
     par++
+})
+
+//Corrige los caracteres que no esten en minuscula y lleven tildes
+function textCorrrect(texto){
+	return  texto.value.toLowerCase().replace(/[áàâã]/g, 'a').replace(/[éèê]/g, 'e').replace(/[íìî]/g, 'i').replace(/[óòôõ]/g, 'o').replace(/[úùû]/g, 'u');
+}
+encriptador.addEventListener("keyup", ()=>{
+	encriptador.value = textCorrrect(encriptador);
 })
 
 // Para Encriptar,
@@ -72,3 +81,8 @@ btnDesencriptar.addEventListener("click", (e)=>{
     desencriptador.innerHTML = desencriptar(texto);
 })
 
+// Copiar.
+btnCopiar.addEventListener('click', (e) => {
+    e.preventDefault();
+    navigator.clipboard.writeText(desencriptador.innerHTML);
+})
